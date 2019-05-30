@@ -40,7 +40,8 @@ angular.module('index').config(['$routeProvider',
         function indexRouteConfig($routeProvider) {
 
     // Transform "/#/id_token=..." to "/#/?id_token=..."
-    $routeProvider.when('/id_token=:response', {
+    // Integration with Keycloak 6.0.1 will have "/#/&id_token=..."
+    $routeProvider.when('/&id_token=:response', {
 
         template   : '',
         controller : ['$location', function reroute($location) {
